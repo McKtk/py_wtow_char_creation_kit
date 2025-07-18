@@ -1,4 +1,5 @@
 from tkinter import *
+from .classes import *
 
 def encode(x):
     return (' '.join(format(ch, 'b') for ch in bytearray(x, encoding='utf8')))
@@ -8,7 +9,7 @@ def decode(x):
 
 def Read_origins():
     Origin = []
-    with open("./origin.bin", "rb") as f:
+    with open("./bin/origin.bin", "rb") as f:
         lines = f.read().decode('utf-8')
         decoded = decode(lines)
         print(decoded)
@@ -17,4 +18,4 @@ def Read_origins():
             
     return Origin
 
-print(Read_origins())
+
