@@ -18,4 +18,3 @@ def Read_origins():
             
     return Origin
 
-
