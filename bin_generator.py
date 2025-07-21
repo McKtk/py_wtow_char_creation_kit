@@ -1,12 +1,19 @@
-def encode(x):
-    return (' '.join(format(ch, 'b') for ch in bytearray(x, encoding='utf8')))
+from modules.classes import Skill, Characteristic
+import pickle
 
-table: list = ["a","b","c","d","e","f"]
+table: list = [
+    "Brettonian",
+    "Dwarf",
+    "Empire",
+    "Halfling",
+    "High Elf",
+    "Wood Elf"
+]
 
-def create_bin(table):
-    table = [bytes(item, "utf8") for item in table]
-    with open("./bin/tab.bin", "wb") as f:
-        lines = f.write(encode(table))
-        print(lines)
-
-create_bin(table)
+with open("./bin/origin.bin", "wb") as f:
+    pickle.dump(table, f)
+    
+with open("./bin/origin.bin", "rb") as f:
+    loaded_table = pickle.load(f)
+    
+print(loaded_table)

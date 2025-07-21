@@ -33,10 +33,12 @@ class Characteristics:
 class Skill:
     def __init__(
     self, 
-    mainStat:Characteristics, 
+    mainStat:Characteristic, 
+    name: str,
     value:int
     ):
         self.mainStat = mainStat
+        self.name = name
         self.value = value
     
 class Lore: 
