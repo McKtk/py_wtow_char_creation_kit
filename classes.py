@@ -1,36 +1,79 @@
 class Characteristic: 
-    name = str
-    value = int
+    def __init__(
+    self, 
+    name: str, 
+    value: int
+    ):
+        self.name = name
+        self.value = value
 
 class Characteristics:
-    weaponSkill = Characteristic
-    balisticSkill = Characteristic
-    strength = Characteristic
-    toughness = Characteristic
-    initiative = Characteristic
-    agility = Characteristic
-    reason = Characteristic
-    fellowship = Characteristic
-    fate = Characteristic
+    def __init__(
+    self, 
+    weaponSkill: Characteristic,
+    balisticSkill:Characteristic ,
+    strength:Characteristic, 
+    toughness:Characteristic, 
+    initiative:Characteristic, 
+    agility:Characteristic,
+    reason:Characteristic,
+    fellowship:Characteristic,
+    fate:Characteristic
+    ):
+        self.weaponSkill = weaponSkill
+        self.balisticSkill = balisticSkill
+        self.strength = strength
+        self.toughness = toughness
+        self.initiative = initiative
+        self.agility = agility
+        self.reason = reason
+        self.fellowship = fellowship
+        self.fate = fate
     
 class Skill:
-    mainStat = Characteristic
-    value = int
+    def __init__(
+    self, 
+    mainStat:Characteristics, 
+    value:int
+    ):
+        self.mainStat = mainStat
+        self.value = value
     
 class Lore: 
-    name = str
+    def __init__(
+    self, 
+    name:str
+    ):
+        self.name = name
     
 class Talent:
-    name = str
-    cost = int
-    desc = str
+    def __init__(
+    self, 
+    name:str, 
+    cost: int, 
+    desc: str
+    ):
+        self.name = name
+        self.cost = cost
+        self.desc = desc
     
 class Character:
-    name = str
-    origin = str
-    career = str
-    stats = Characteristics
-    exp = int
-    speed = str
-    lores = list[Lore]
-    talents = list[Talent]
+    def __init__(
+    self,
+    name:str,
+    origin:str,
+    career:str,
+    stats:Characteristics,
+    exp:int,
+    speed:str,
+    lores:list[Lore],
+    talents:list[Talent],
+    ):
+        self.name = name
+        self.origin = origin
+        self.career = career
+        self.stats = stats
+        self.exp = exp
+        self.speed = speed
+        self.lores = lores
+        self.talents = talents
