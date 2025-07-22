@@ -53,11 +53,11 @@ class Talent:
     self, 
     name:str, 
     cost: int, 
-    desc: str
+    req: str
     ):
         self.name = name
         self.cost = cost
-        self.desc = desc
+        self.req = req
     
 class Character:
     def __init__(
