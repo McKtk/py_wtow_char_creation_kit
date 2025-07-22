@@ -1,20 +1,19 @@
-from tkinter import *
-from .classes import *
+import tkinter as tk
+from tkinter import ttk
+from modules.classes import *
+from modules.functions import *
+from modules.elements import *
+from modules.styles import *
 
-def encode(x):
-    return (' '.join(format(ch, 'b') for ch in bytearray(x, encoding='utf8')))
+    
+talents = read_bin("talents")
 
-def decode(x):
-    return (''.join(chr(int(b, 2)) for b in x.split()))
+root = tk.Tk()
+root.title("WTOW")
+root.geometry("400x250")
 
-def Read_origins():
-    Origin = []
-    with open("./bin/origin.bin", "rb") as f:
-        lines = f.read().decode('utf-8')
-        decoded = decode(lines)
-        print(decoded)
-        for line in decoded.splitlines():
-            Origin.append(line)
-            
-    return Origin
+styles()
 
+talent_list(root, talents)
+
+root.mainloop()
