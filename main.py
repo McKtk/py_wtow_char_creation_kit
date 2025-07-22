@@ -13,7 +13,6 @@ root.title("WTOW")
 root.geometry("400x250")
 
 styles()
-
-talent_list(root, talents)
+menu(root, lambda: open_new_window(root, "Talents", "600x150", talent_list, talents))
 
 root.mainloop()

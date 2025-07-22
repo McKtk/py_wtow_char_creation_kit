@@ -9,9 +9,9 @@ def on_select(tree):
     for item in selected:
         tree.item(item, tags=("selected"))
 
-def talent_list(root, talents):
+def talent_list(parent, talents):
     columns = ("Name", "Cost in XP", "Requirements")
-    tree = ttk.Treeview(root, columns=columns, show="headings", height=10)
+    tree = ttk.Treeview(parent, columns=columns, show="headings", height=10)
     tree.pack(fill=tk.BOTH, expand=True)
 
     tree.heading("Name", text="Name")
@@ -23,3 +23,7 @@ def talent_list(root, talents):
 
     tree.tag_configure("selected", font=("Segoe UI", 11, "bold"))
     tree.bind("<<TreeviewSelect>>", lambda event: on_select(tree))
+    
+def menu(parent, command):
+    tk.Label(parent, text="Menu").pack(pady=10)
+    tk.Button(parent, text="Talents", command=command).pack(pady=10)
